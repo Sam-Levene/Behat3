@@ -1,0 +1,22 @@
+default:
+  suites:
+    alex_features:
+      contexts: [ AlexContext]
+      filters:
+        role: alex
+    sam_features:
+      contexts: [ SamContext]
+      filters:
+        role: sam
+  extensions:
+    Behat\MinkExtension:
+      base_url: 'http://store.demoqa.com/'
+      sessions:
+        default:
+          goutte: ~
+phantomjs:
+  extensions:
+    Behat\MinkExtension:
+      goutte: ~
+      selenium2:
+        wd_host: "http://localhost:8643/wd/hub"
